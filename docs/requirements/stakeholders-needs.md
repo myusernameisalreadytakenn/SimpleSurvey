@@ -349,6 +349,28 @@
 
 ### Посилання
 
+[1] http://stn.ucoz.ru/index/ekspertni_ta_navchalni_sistemi/0-287  
+
+[2] Навчальний посібник «Теорія економічного аналізу» Автор: Купалова 
+Г.І. Видавництво: «ЗНАННЯ» Рік: 2008 Сторінки: 639  
+
+[3] Методологія експертного оцінювання: конспект лекцій / уклад. : В. П. 
+Новосад, Р. Г. Селіверстов. - К. : НАДУ, 2008. - 48 с. 
+ 
+[4]https://uk.wikipedia.org/wiki/%D0%90%D0%BD%D0%BA%D0%B5%D1
+%82%D0%B0 
+ 
+[5] http://ukrbukva.net/page,10,64178-Metody-ekspertnyh-ocenok.html 
+ 
+[6] http://www.aiportal.ru/articles/expert-systems/development-expsys.html 
+ 
+[7]https://uk.wikipedia.org/wiki/%D0%95%D0%BA%D1%81%D0%BF%D0%
+B5%D1%80%D1%82 
+ 
+[8] http://pidruchniki.com/12590605/sotsiologiya/ekspertne_otsinyuvannya 
+ 
+[9] https://www.surveymonkey.ru/ 
+
 ## Короткий зміст
 
 1. Характеристика ділових процесів.
