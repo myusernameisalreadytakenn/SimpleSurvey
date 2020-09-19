@@ -3,7 +3,7 @@
 (◕‿◕)
 
 <p align="center">
-  <a target="blank"><img src="https://github.com/snyk04/SurvExp/image.png"/></a>
+  <a target="blank"><img src="./image.png"/></a>
 </p>
 
 ## Загальна характеристика проекту
