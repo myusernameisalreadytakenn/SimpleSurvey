@@ -367,7 +367,6 @@
 [2] Методологія експертного оцінювання: конспект лекцій / уклад. : В. П. 
 Новосад, Р. Г. Селіверстов. - К. : НАДУ, 2008. - 48 с. 
  
-[3] https://uk.wikipedia.org/wiki/%D0%90%D0%BD%D0%BA%D0%B5%D1
-%82%D0%B0 
+[3] https://uk.wikipedia.org/wiki/%D0%90%D0%BD%D0%BA%D0%B5%D1%82%D0%B0 
  
 [4] http://ukrbukva.net/page,10,64178-Metody-ekspertnyh-ocenok.html 
