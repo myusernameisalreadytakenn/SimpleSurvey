@@ -7,4 +7,4 @@ This document describes simple survey system - _SimpleSurvey_ here and after. Th
 
 # Контактні дані виконваців
 
-* Рустамов Арсен gmail: 
+* Рустамов Арсен gmail: jot000007@gmail.com
