@@ -1,13 +1,10 @@
 # Система організації та управління опитуваннями експертів
 
-Шаблон репозиторію для виконання лабораторних робіт з курсу "Організація баз даних"
+This document describes simple survey system - _SimpleSurvey_ here and after. The system provides the following functionality:
+* Create and edit basic surveys
+* Invite an user to participate in a survey
+* Collect basic analytics about the surveys
 
-*Для виконання лабораторних робіт необхідно зробити ```fork``` цього репозіторію, склонувати вже власний репозіторій та розміщувати документацію (результати виконання лабораторних робіт) у відповідних діректоріях. 
-В цьому файлі необхідно вказати назву проекту (тему лабораторних робіт). Коротку загальну характеристику
-проекту, контактні дані виконавців.*
+# Контактні дані виконваців
 
-[Теми проєктів](./guidelines/themes.md)
-
-[Методичні вказівки](./guidelines/guidelines.md)
-
-[Звітність](https://docs.google.com/spreadsheets/d/1ePb9OBB7ox0E5-GAh2r6ZU3j--PpAROCUfqzA17kL20/edit?usp=sharing)
+* Рустамов Арсен gmail: 
