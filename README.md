@@ -1,7 +1,7 @@
 # Система організації та управління опитуваннями експертів
 
 This document describes simple survey system - _SimpleSurvey_ here and after. The system provides the following functionality:
-* Create and edit basic surveys
+* Create and edit basic surveys based on simple list with predefined answers
 * Invite an user to participate in a survey
 * Collect basic analytics about the surveys
 
