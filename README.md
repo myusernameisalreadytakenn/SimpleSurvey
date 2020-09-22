@@ -1,8 +1,6 @@
 # Система організації та управління опитуваннями експертів
 
-<p align="center">
-  <a target="blank"><img src="./assets/readme-header.png"/></a>
-</p>
+![Logo](./assets/readme-header.png)
 
 ## Загальна характеристика проекту
 
