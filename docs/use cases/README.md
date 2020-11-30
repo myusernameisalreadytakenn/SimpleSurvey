@@ -1,18 +1,3 @@
 # Модель прецедентів
-
-В цьому файлі необхідно перелічити всі документи, розроблені в проекті та дати посилання на них.
-
-*Модель прецедентів повинна містити загальні оглядові діаграми та специфікації прецедентів.*
-
-*Вбудовування зображень діаграм здійснюється з використанням сервісу plantuml.com. Сервіси взаємодіють так, як зобраажено на діаграмі нижче.*
-
-![uml](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/boldak/database_basics_template/master/src/uml/example.puml)
-
-*Для вбудовування необхідно використовувати:*
-```
-![IMAGE TITLE](http://www.plantuml.com/plantuml/proxy?cache=no&src=URL_OF_PUML_SOURCE)
-```
-Наприклад, зображена вище діаграма вбудована за допомогою:
-```
-![uml](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/boldak/database_basics_template/master/src/uml/example.puml)
-```
+![uml]
+(http://www.plantuml.com/plantuml/uml/bLJDYjDG5DxdAUxI1gEazKUBIA4-W9lkX18qY5Yhj77d8acfTL5i4OmWm_oyGQPDPaBQPbxXd3UQSq_cmft9tSoYSEztpls-x_oalMdWJOBlNqPMy2aO-UAjz_wpzz7l3lflXkuZr-h24UHme5y65v1Zs1NUL7pp9zElOmh-XH8Zk981ZBMGVFWVAWoXm0XZdC46Kbne6MtAM1Dn2ZjCC8O2IYtQiMwoNlrm72NNX5m3ffuwZlDQFB3jGN_eslQxiVG3UrcCyYDL1Palw932WGAhXm8sc416Q5MVC258GCLv_53buhmbcbhjMeixegjW21N-93YIDao494x14dPqpnIc-SEba0U1_t0kRqInXKgmrOpxkCHV2anLQ-4IPwscpGxRFCPOZWZscbK2Slc8-MBbN_ALv3usS3rXhXCCMNo7AyWKLu8HMPtXRrnWOYpQmFUK-KuXvxAscZUwdilgodgrz1Y3ShRrXEjMKN0lFM3SqCQbKdOrwMSi_UVs2YW1wkYTTI41hJMKDtzitXIJrlDxZK0nT3I65ynmfdQcCIieZ7PCL2-PQgrlZR9Z-YJugsYk7XN1wscSKClg-UCFz5Tp3G00)
