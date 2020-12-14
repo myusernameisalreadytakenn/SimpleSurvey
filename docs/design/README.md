@@ -9,4 +9,4 @@
 
 ## Реляційна схема
 
-
+![alt text](https://github.com/myusernameisalreadytakenn/SimpleSurvey/blob/master/docs/design/photo_2020-12-14_19-52-19.jpg)
