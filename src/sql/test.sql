@@ -1,96 +1,97 @@
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
-
-DROP SCHEMA IF EXISTS `datago` ;
-
-CREATE SCHEMA IF NOT EXISTS `datago` DEFAULT CHARACTER SET utf8 ;
-USE `datago` ;
-
-DROP TABLE IF EXISTS `datago`.`Dataset`;
-
-CREATE TABLE IF NOT EXISTS `datago`.`Dataset`
+CREATE DATABASE SimpleSurvey;
+USE SimpleSurvey;
+CREATE TABLE User
 (
-	`GUID` INT PRIMARY KEY NOT NULL AUTO_INCREMENT
-)
-ENGINE=InnoDB;
+id int AUTO_INCREMENT,
+name varchar(300) NOT NULL,
+password varchar(300) NOT NULL,
+email varchar(200) NOT NULL,
+status varchar(100),
+PRIMARY KEY (id)
+);
 
-
-DROP TABLE IF EXISTS `datago`.`User`;
-
-CREATE TABLE IF NOT EXISTS `datago`.`User`
+CREATE TABLE Access
 (
-	`idUser` INT PRIMARY KEY NOT NULL,
-    `name` VARCHAR(45) NOT NULL,
-    `email` VARCHAR(45) NOT NULL,
-    `password` VARCHAR(45) NOT NULL,
-    `photo` VARCHAR(45) NOT NULL
-)
-ENGINE=InnoDB;
+id int AUTO_INCREMENT,
+role varchar(100) NOT NULL,
+user_id int,
+survay_id int,
+PRIMARY KEY (id)
+);
 
-
-DROP TABLE IF EXISTS `datago`.`Metadata` ;
-
-CREATE TABLE IF NOT EXISTS `datago`.`Metadata` (
-  `key` VARCHAR(225) NOT NULL,
-  `value` VARCHAR(225) NULL,
-  `GUID` INT NOT NULL,
-  FOREIGN KEY (`GUID`) REFERENCES `datago`.`Dataset` (`GUID`)
-)
-ENGINE=InnoDB;
-
-DROP TABLE IF EXISTS `datago`.`Comment`;
-
-CREATE TABLE IF NOT EXISTS `datago`.`Comment` 
+CREATE TABLE Action
 (
-	`idComment` INT NOT NULL,
-    `author` VARCHAR(45) NOT NULL,
-    `body` VARCHAR(5000) NOT NULL,
-    `parent` VARCHAR(45) NOT NULL,
-    `GUID` INT NOT NULL,
-    PRIMARY KEY (`idComment`),
-	FOREIGN KEY (`GUID`) REFERENCES `datago`.`Dataset` (`GUID`)
-)
-ENGINE=InnoDB;
+id int AUTO_INCREMENT,
+lastSurvayState varchar(100) NOT NULL,
+actedAt datetime,
+survay_id int,
+user_id int,
+PRIMARY KEY(id)
+);
 
-DROP TABLE IF EXISTS `datago`.`Datafile`;
-
-CREATE TABLE IF NOT EXISTS `datago`.`Datafile`
+CREATE TABLE Question
 (
-	`idDatafile` INT NOT NULL,
-    `path` LONGTEXT NULL,
-    `User_idUser` INT NOT NULL,
-    `User_name` VARCHAR(45) NOT NULL,
-    `GUID` INT NOT NULL,
-    PRIMARY KEY (`idDatafile`),
-	FOREIGN KEY (`GUID`) REFERENCES `datago`.`Datafile` (`GUID`),
-	FOREIGN KEY (`User_idUser`) REFERENCES `datago`.`Datafile` (`User_idUser`)
-)
-ENGINE=InnoDB;
+id int AUTO_INCREMENT,
+text varchar(1000) NOT NULL,
+survay_id int,
+PRIMARY KEY(id)
+);
 
-DROP TABLE IF EXISTS `datago`.`Access`;
-
-CREATE TABLE IF NOT EXISTS `datago`.`Access`
+CREATE TABLE Answer
 (
-	`role` VARCHAR(45) NOT NULL,
-    `permission` LONGTEXT NOT NULL,
-    `User_idUser` INT NOT NULL,
-    `User_name` VARCHAR(45),
-    `GUID` INT NOT NULL,
-    FOREIGN KEY (`GUID`) REFERENCES `datago`.`Dataset` (`GUID`),
-	FOREIGN KEY (`User_idUser`) REFERENCES `datago`.`User` (`idUser`),
-    FOREIGN KEY (`User_name`) REFERENCES `datago`.`User` (`name`)
-)
-ENGINE=InnoDB;
+id int AUTO_INCREMENT,
+answerKey varchar(50), 
+answerIndex int,
+question_id int,
+user_id int,
+PRIMARY KEY(id)
+);
 
-DROP TABLE IF EXISTS `datago`.`Category`;
-
-CREATE TABLE IF NOT EXISTS `datago`.`Category`
+CREATE TABLE Survay
 (
-	`idCategory` INT NOT NULL,
-    `name` VARCHAR(45) NOT NULL,
-    `description` VARCHAR(5000),
-    `GUID` INT NOT NULL,
-    FOREIGN KEY (`idCategory`) REFERENCES `datago`.`Dataset` (`GUID`)
-)
-ENGINE=InnoDB;
+id int AUTO_INCREMENT,
+name varchar(300) NOT NULL,
+description varchar(1000) NOT NULL,
+PRIMARY KEY(id)
+);
+ALTER TABLE Access
+ADD FOREIGN KEY (user_id)
+REFERENCES User (id)
+ON DELETE No Action ON UPDATE No Action;
+ALTER TABLE Access
+ADD FOREIGN KEY (survay_id)
+REFERENCES Survay (id)
+ON DELETE No Action ON UPDATE No Action;
+
+ALTER TABLE Action
+ADD FOREIGN KEY (user_id)
+REFERENCES User (id)
+ON DELETE No Action ON UPDATE No Action;
+ALTER TABLE Action
+ADD FOREIGN KEY (survay_id)
+REFERENCES Survay (id)
+ON DELETE No Action ON UPDATE No Action;
+
+ALTER TABLE Question
+ADD FOREIGN KEY (survay_id)
+REFERENCES Survay (id)
+ON DELETE No Action ON UPDATE No Action;
+
+ALTER TABLE Answer
+ADD FOREIGN KEY (user_id)
+REFERENCES User (id)
+ON DELETE No Action ON UPDATE No Action;
+ALTER TABLE Answer
+ADD FOREIGN KEY (question_id)
+REFERENCES Question (id)
+ON DELETE No Action ON UPDATE No Action;
+
+INSERT INTO User(name, password, email, status) VALUES('Рустамов Арсен', 'rustamov', 'jot000007@gmail.com', null);
+
+INSERT INTO Survay(name, description) VALUES('Тестовый опрос', 'Должен быть заменён');
+
+INSERT INTO Access(role, user_id, survay_id) VALUES('respondent', 1, 1);
+
+INSERT INTO Question(text, survay_id) VALUES('Вы верите в бога?',1);
+INSERT INTO Action(lastSurvayState , actedAt , survay_id , user_id) VALUES('Updated', '2020-11-20 23:59:59', 1, 1);
+INSERT INTO Action(lastSurvayState , actedAt , survay_id , user_id) VALUES('Completed', '2020-12-10 23:59:59', 1, 3);
