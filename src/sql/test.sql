@@ -90,7 +90,7 @@ INSERT INTO User(name, password, email, status) VALUES('Рустамов Арс�
 
 INSERT INTO Survay(name, description) VALUES('Тестовый опрос', 'Должен быть заменён');
 
-INSERT INTO Access(role, user_id, survay_id) VALUES('respondent', 1, 1);
+INSERT INTO Access(role, user_id, survay_id) VALUES('teamleader', 1, 1);
 
 INSERT INTO Question(text, survay_id) VALUES('Вы верите в бога?',1);
 INSERT INTO Action(lastSurvayState , actedAt , survay_id , user_id) VALUES('Updated', '2020-11-20 23:59:59', 1, 1);
