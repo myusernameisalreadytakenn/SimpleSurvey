@@ -8,23 +8,12 @@ class Access extends Sequilize.Model {}
 
 Access.init(
     {
-        name: {
-            type: Sequilize.INTEGER,
-            primaryKey: true
-        },
-        password: {
+       
+        role: {
             type: Sequilize.STRING(100),
             allowNull: false
         },
-        status: {
-            type: Sequilize.INTEGER,
-            allowNull: true
-        },
-        email: {
-            type: Sequilize.INTEGER,
-            allowNull: true
-        }
-    },
+        
     {
         sequelize: connection,
         freezeTableName: true,
