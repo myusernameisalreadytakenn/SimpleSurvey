@@ -3,15 +3,15 @@ const Sequelize = require("sequelize");
 
 
 const Model = Sequelize.Model;
-class Role extends Model {}
-Role.init({
+class Survay extends Model {}
+Survay.init({
 
-    RoleId: {
+   SurvayId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         primaryKey: true
     },
-    Role: {
+    Survay: {
         type: Sequelize.STRING(45)
     }
 }, {
@@ -20,4 +20,4 @@ Role.init({
 
 });
 
-module.exports = Role;
+module.exports = Survay;
