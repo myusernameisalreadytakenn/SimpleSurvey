@@ -1,35 +1,45 @@
-const connection = require('../connection');
-const Sequilize = require('sequelize');
+const connection = require("../connection");
+const Sequelize = require("sequelize");
+const Project = require("./project");
+const User = require("./user");
+const Role = require("./role");
 
-const User = require('./user.js');
-const Project = require('./project.js');
 
-class Access extends Sequilize.Model {}
-
-Access.init(
-    {
-       
-        role: {
-            type: Sequilize.STRING(100),
-            allowNull: false
-        },
-        
-    {
-        sequelize: connection,
-        freezeTableName: true,
-        modelName: 'Access'
+const Model = Sequelize.Model;
+class Access extends Model {}
+Access.init({
+    // attributes
+    ProjectId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+            model: Project,
+            key: "ProjectId"
+        }
+    },
+    UserId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+            model: User,
+            key: "UserId"
+        }
+    },
+    RoleId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+            model: Role,
+            key: "RoleId"
+        }
     }
-);
-
-User.hasMany(Access);
-Project.hasMany(Access);
-
-Access.belongsTo(User, {
-    foreignKey: 'user_id'
+}, {
+    sequelize: connection,
+    modelName: "Access",
+    tableName: "Access",
+    freezeTableName: true
+    // options
 });
 
-Access.belongsTo(Project, {
-    foreignKey: 'project_id'
-});
 
-module.exports = Access
+module.exports = Access;
