@@ -3,21 +3,21 @@ const Sequelize = require("sequelize");
 
 
 const Model = Sequelize.Model;
-class Role extends Model {}
-Role.init({
+class Answer extends Model {}
+Answer.init({
 
-    RoleId: {
+    AnswerId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         primaryKey: true
     },
-    Role: {
+    Answer: {
         type: Sequelize.STRING(45)
     }
 }, {
     sequelize: connection,
-    modelName: 'answer'
+    modelName: 'Answer'
 
 });
 
-module.exports = Role;
+module.exports = Answer;
