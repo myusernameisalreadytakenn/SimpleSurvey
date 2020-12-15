@@ -16,7 +16,7 @@ Role.init({
     }
 }, {
     sequelize: connection,
-    modelName: 'survay'
+    modelName: 'Survay'
 
 });
 
