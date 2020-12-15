@@ -6,7 +6,7 @@ const Model = Sequelize.Model;
 class User extends Model {}
 
 User.init({
-    // attributes
+
     UserId: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -24,9 +24,7 @@ User.init({
         type: Sequelize.STRING(50),
         allowNull: false
     },
-    avatar: {
-        type: Sequelize.STRING(500)
-    }
+    
 }, {
     sequelize: connection,
     modelName: 'User',
