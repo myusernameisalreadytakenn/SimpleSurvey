@@ -1,20 +1,19 @@
 const connection = require("../connection");
 const Sequelize = require("sequelize");
-const Project = require("./project");
+const Action = require("./project");
 const User = require("./user");
-const Role = require("./role");
 
 
 const Model = Sequelize.Model;
 class Access extends Model {}
 Access.init({
 
-    ProjectId: {
+    ActionId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-            model: Project,
-            key: "ProjectId"
+            model: Action,
+            key: "ActionId"
         }
     },
     UserId: {
@@ -25,14 +24,7 @@ Access.init({
             key: "UserId"
         }
     },
-    RoleId: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-            model: Role,
-            key: "RoleId"
-        }
-    }
+   
 }, {
     sequelize: connection,
     modelName: "Access",
