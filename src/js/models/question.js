@@ -3,10 +3,10 @@ const Sequelize = require("sequelize");
 
 
 const Model = Sequelize.Model;
-class UserStatus extends Model {}
-UserStatus.init({
-    // attributes
-    UserStatusId: {
+class Question extends Model {}
+Question.init({
+
+    QuestionId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         primaryKey: true
@@ -16,8 +16,8 @@ UserStatus.init({
     }
 }, {
     sequelize: connection,
-    modelName: 'UserStatus'
-    // options
+    modelName: 'Question'
+
 });
 
-module.exports = UserStatus;
+module.exports = Question;
