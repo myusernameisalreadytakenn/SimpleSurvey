@@ -4,7 +4,7 @@ const userMapper = (user) => {
     console.log(user.email + ' | ' + user.passwrod + ' | ' + user.status + ' | ' + user.name);
 };
 
-const projectMapper = (project) => {
+const surveyMapper = (project) => {
     console.log('#' + ' | ' + survey.name + ' | ' + survey.description);
 };
 
