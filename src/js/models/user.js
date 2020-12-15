@@ -27,8 +27,8 @@ User.init({
     
 }, {
     sequelize: connection,
-    modelName: 'User',
-    tableName: "User",
+    modelName: 'user',
+    tableName: "user",
     freezeTableName: true
 
 });
