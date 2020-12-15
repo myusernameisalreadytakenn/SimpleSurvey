@@ -8,7 +8,7 @@ const Role = require("./role");
 const Model = Sequelize.Model;
 class Access extends Model {}
 Access.init({
-    // attributes
+
     ProjectId: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -38,7 +38,7 @@ Access.init({
     modelName: "Access",
     tableName: "Access",
     freezeTableName: true
-    // options
+
 });
 
 
