@@ -27,10 +27,10 @@ User.init({
     
 }, {
     sequelize: connection,
-    modelName: 'user',
-    tableName: "user",
+    modelName: 'User',
+    tableName: "User",
     freezeTableName: true
 
 });
 
-module.exports = user;
+module.exports = User;
