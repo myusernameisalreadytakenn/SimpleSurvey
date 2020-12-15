@@ -5,7 +5,6 @@ const options = {
     username: 'admin',
     password: 'n03rn7tp',
     dialect: 'mysql',
-    define: { timestamps: false }, 
     
     pool: {
         max: 5,
