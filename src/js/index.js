@@ -1,11 +1,11 @@
 const models = require('./models/index');
 
 const userMapper = (user) => {
-    console.log(user.id + ' | ' + user.name + ' | ' + user.email + ' | ' + user.nickname);
+    console.log(user.email + ' | ' + user.passwrod + ' | ' + user.status + ' | ' + user.name);
 };
 
 const projectMapper = (project) => {
-    console.log('#' + project.id + ' | ' + project.name);
+    console.log('#' + ' | ' + survey.name + ' | ' + survey.description);
 };
 
 
@@ -17,9 +17,9 @@ const projectMapper = (project) => {
     usersList.map(userMapper);
 
     console.log('--------');
-    console.log('Projects list');
+    console.log('Surveys list');
     console.log('--------');
-    const ProjectsList = await models.Project.findAll();
-    ProjectsList.map(projectMapper);
+    const SurveysList = await models.Survey.findAll();
+    SurveysList.map(surveyMapper);
 
 })();
