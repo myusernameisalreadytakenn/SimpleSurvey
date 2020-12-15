@@ -4,19 +4,18 @@ const Sequelize = require("sequelize");
 
 const Model = Sequelize.Model;
 class Action extends Model {}
-Role.init({
+Action.init({
 
-    RoleId: {
+    ActionId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         primaryKey: true
-    },
-    Role: {
-        type: Sequelize.STRING(45)
     }
 }, {
     sequelize: connection,
-    modelName: 'Action'
+    modelName: "Action",
+    tableName: "Action",
+    freezeTableName: true
 
 });
 
