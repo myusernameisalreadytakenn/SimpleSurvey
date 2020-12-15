@@ -1,32 +1,23 @@
-const connection = require('../connection');
-const Sequelize = require('sequelize');
-const User = require("./user");
-const Project = require("./project");
-const Role = require("./role");
-const Access = require("./access");
+const connection = require("../connection");
+const Sequelize = require("sequelize");
 
-Project.belongsToMany(User, {
-    through: 'Access',
-    timestamps: false,
-    foreignKey: 'ProjectId'
+
+const Model = Sequelize.Model;
+class Action extends Model {}
+Role.init({
+
+    RoleId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        primaryKey: true
+    },
+    Role: {
+        type: Sequelize.STRING(45)
+    }
+}, {
+    sequelize: connection,
+    modelName: 'Action'
+
 });
 
-
-User.belongsToMany(Project, {
-    through: 'Access',
-    timestamps: false,
-    foreignKey: 'UserId'
-});
-
-Role.belongsToMany(User, {
-    through: 'Access',
-    timestamps: false,
-    foreignKey: 'RoleId'
-});
-
-module.exports = {
-    User,
-    Project,
-    Role,
-    Access
-};
+module.exports = Action;
