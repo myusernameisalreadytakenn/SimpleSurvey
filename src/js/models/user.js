@@ -32,7 +32,7 @@ User.init({
     modelName: 'User',
     tableName: "User",
     freezeTableName: true
-    // options
+
 });
 
 module.exports = User;
